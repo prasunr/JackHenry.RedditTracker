@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackHenry.RedditTracker.Api", "JackHenry.RedditTracker.Api\JackHenry.RedditTracker.Api.csproj", "{BF9B40AC-E7B6-4A65-BE1A-907390101A95}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackHenry.RedditTracker.Core", "JackHenry.RedditTracker.Core\JackHenry.RedditTracker.Core.csproj", "{4EB56883-FEF7-4A09-BFD5-CBA5FF6881D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackHenry.RedditTracker.Helper", "JackHenry.RedditTracker.Helper\JackHenry.RedditTracker.Helper.csproj", "{E374F459-56AB-4FA5-89E2-A29896A49C03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JackHenry.RedditTracker.Common", "JackHenry.RedditTracker.Common\JackHenry.RedditTracker.Common.csproj", "{8BC5A7EE-A785-4827-B1A1-433FB9521486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JackHenry.RedditTracker.Console", "JackHenry.RedditTracker.Console\JackHenry.RedditTracker.Console.csproj", "{2BEF917F-5F89-4142-B4CB-D3DDE6D8BEFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF9B40AC-E7B6-4A65-BE1A-907390101A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9B40AC-E7B6-4A65-BE1A-907390101A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9B40AC-E7B6-4A65-BE1A-907390101A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9B40AC-E7B6-4A65-BE1A-907390101A95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB56883-FEF7-4A09-BFD5-CBA5FF6881D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB56883-FEF7-4A09-BFD5-CBA5FF6881D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB56883-FEF7-4A09-BFD5-CBA5FF6881D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB56883-FEF7-4A09-BFD5-CBA5FF6881D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E374F459-56AB-4FA5-89E2-A29896A49C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E374F459-56AB-4FA5-89E2-A29896A49C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E374F459-56AB-4FA5-89E2-A29896A49C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E374F459-56AB-4FA5-89E2-A29896A49C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC5A7EE-A785-4827-B1A1-433FB9521486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC5A7EE-A785-4827-B1A1-433FB9521486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC5A7EE-A785-4827-B1A1-433FB9521486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC5A7EE-A785-4827-B1A1-433FB9521486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BEF917F-5F89-4142-B4CB-D3DDE6D8BEFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BEF917F-5F89-4142-B4CB-D3DDE6D8BEFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BEF917F-5F89-4142-B4CB-D3DDE6D8BEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BEF917F-5F89-4142-B4CB-D3DDE6D8BEFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD3F907B-0EF9-4F99-83A7-7CEA573C3880}
+	EndGlobalSection
+EndGlobal
