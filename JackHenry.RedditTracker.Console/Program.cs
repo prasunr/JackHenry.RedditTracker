@@ -3,6 +3,6 @@
 using Reddit;
 
 Console.WriteLine("Hello, World!");
-var r = new RedditClient("SgzkNQuIzBP30zPmA8nJGg");
-Console.WriteLine(r.Account.Me.);
+var r = new RedditClient("SgzkNQuIzBP30zPmA8nJGg",null, "fOeevmjn8FXffKH4tZRvxePTRS5g0g");
+Console.WriteLine(r.Account.Me.Fullname);
 Console.ReadLine();

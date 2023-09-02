@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using JackHenry.RedditTracker.Common;
 using JackHenry.RedditTracker.Helper.HttpHelper;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Reddit;
@@ -35,5 +36,29 @@ namespace JackHenry.RedditTracker.Api.Controllers
             return Ok();
 
         }
+
+        [HttpGet("Throw")]
+        public IActionResult Throw() => throw new Exception("An error has been encountered.");
+
+        [Route("/error-development")]
+        public IActionResult HandleErrorDevelopment(
+            [FromServices] IHostEnvironment hostEnvironment)
+        {
+            if (!hostEnvironment.IsDevelopment())
+            {
+                return NotFound();
+            }
+
+            var exceptionHandlerFeature =
+                HttpContext.Features.Get<IExceptionHandlerFeature>()!;
+
+            return Problem(
+                detail: exceptionHandlerFeature.Error.StackTrace,
+                title: exceptionHandlerFeature.Error.Message);
+        }
+
+        [Route("/error")]
+        public IActionResult HandleError() =>
+            Problem();
     }
 }
