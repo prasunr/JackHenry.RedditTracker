@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using JackHenry.RedditTracker.Common;
 using Microsoft.Extensions.Configuration;
+using Reddit;
+using Reddit.Controllers;
 
 namespace JackHenry.RedditTracker.Helper.HttpHelper
 {
@@ -35,5 +37,20 @@ namespace JackHenry.RedditTracker.Helper.HttpHelper
             HttpApiClient.PostAsJsonAsync(HttpApiClient.BaseAddress, new object(){});
         }
 
+        public static List<Subreddit> GetPostsWithMostUpVotes(string appId, string refreshToken, string accessToken)
+        {
+            RedditClient reddit = new RedditClient(appId, refreshToken, accessToken);
+            User me = reddit.Account.Me;
+
+            return reddit.GetSubreddits("Top");
+        }
+
+        public static List<Subreddit> GetUsersWithMostPosts(string appId, string refreshToken, string accessToken)
+        {
+            RedditClient reddit = new RedditClient(appId, refreshToken, accessToken);
+            User me = reddit.Account.Me;
+
+            return reddit.GetSubreddits("Top").;
+        }
     }
 }

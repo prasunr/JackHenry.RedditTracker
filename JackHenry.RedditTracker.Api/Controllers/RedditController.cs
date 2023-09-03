@@ -1,19 +1,22 @@
-﻿using System.Diagnostics;
-using JackHenry.RedditTracker.Common;
+﻿using JackHenry.RedditTracker.Common;
 using JackHenry.RedditTracker.Helper.HttpHelper;
 using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Reddit;
+using Reddit.Controllers;
 
 namespace JackHenry.RedditTracker.Api.Controllers
 {
-   
+
     [ApiController]
     public class RedditController : ControllerBase
     {
         private readonly RedditApiModel redditApiModel;
         private readonly IConfiguration _configuration;
+        private readonly string _redditAppId;
+        private readonly string _refreshToken;
+        private readonly string _accessToken;
+
         public RedditController(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -26,19 +29,25 @@ namespace JackHenry.RedditTracker.Api.Controllers
         [HttpGet("RedditAuthorize")]
         public IActionResult RedditAuthorize()
         {
-            var apiAuthorizeParams = _configuration.GetSection("AuthorizeUrlParams").Value ?? "";
-
             var r = new RedditClient("SgzkNQuIzBP30zPmA8nJGg");
-
-            //var redditApiModel = _configuration.GetSection("RedditApi");
-            //RedditHttpHelper.SetupAuthorizeHttpClient(redditApiModel, apiAuthorizeParams);
-            // Debug.WriteLine("Redditapimodel : ", redditApiModel);
             return Ok();
 
         }
 
+        [HttpGet("RedditPostsWithMostUpVotes")]
+        public ActionResult<List<Subreddit>> RedditPostsWithMostUpVotes()
+        {
+            return RedditHttpHelper.GetPostsWithMostUpVotes(_redditAppId, _refreshToken, _accessToken);
+        }
+
+        [HttpGet("RedditUsersWithMostPosts")]
+        public ActionResult<List<Subreddit>> RedditUsersWithMostPosts()
+        {
+            return RedditHttpHelper.GetUsersWithMostPosts(_redditAppId, _refreshToken, _accessToken);
+        }
         [HttpGet("Throw")]
         public IActionResult Throw() => throw new Exception("An error has been encountered.");
+
 
         [Route("/error-development")]
         public IActionResult HandleErrorDevelopment(
@@ -56,6 +65,7 @@ namespace JackHenry.RedditTracker.Api.Controllers
                 detail: exceptionHandlerFeature.Error.StackTrace,
                 title: exceptionHandlerFeature.Error.Message);
         }
+
 
         [Route("/error")]
         public IActionResult HandleError() =>
