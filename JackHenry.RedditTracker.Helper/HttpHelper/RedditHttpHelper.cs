@@ -50,7 +50,7 @@ namespace JackHenry.RedditTracker.Helper.HttpHelper
             RedditClient reddit = new RedditClient(appId, refreshToken, accessToken);
             User me = reddit.Account.Me;
 
-            return reddit.GetSubreddits("Top").;
+            return reddit.GetSubreddits("users/popular");
         }
     }
 }
